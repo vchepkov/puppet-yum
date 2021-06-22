@@ -26,6 +26,13 @@
   ],
   "operatingsystem_support": [
     {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "33",
+        "34"
+      ]
+    },
+    {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "7",
