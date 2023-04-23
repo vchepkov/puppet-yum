@@ -1,0 +1,97 @@
+---
+yum::os_default_repos:
+  - amzn2-core
+  - amzn2-core-debuginfo
+  - amzn2-core-source
+  - amzn2extra-docker
+  - amzn2extra-docker-debuginfo
+  - amzn2extra-docker-source
+  - amzn2extra-kernel-5.10
+  - amzn2extra-kernel-5.10-debuginfo
+  - amzn2extra-kernel-5.10-source
+
+yum::repos:
+  amzn2-core:
+    descr: Amazon Linux 2 core repository
+    enabled: true
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    metadata_expire: '300'
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/$product/$target/$basearch/mirror.list"
+    mirrorlist_expire: '300'
+    priority: '10'
+    target: /etc/yum.repos.d/amzn2-core.repo
+  amzn2-core-debuginfo:
+    descr: Amazon Linux 2 core repository - debuginfo packages
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    metadata_expire: '300'
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/$product/$target/debuginfo/$basearch/mirror.list"
+    mirrorlist_expire: '300'
+    priority: '10'
+    target: /etc/yum.repos.d/amzn2-core.repo
+  amzn2-core-source:
+    descr: Amazon Linux 2 core repository - source packages
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    metadata_expire: '300'
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/$product/$target/SRPMS/mirror.list"
+    mirrorlist_expire: '300'
+    priority: '10'
+    target: /etc/yum.repos.d/amzn2-core.repo
+  amzn2extra-docker:
+    descr: Amazon Extras repo for docker
+    enabled: true
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/docker/latest/$basearch/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
+  amzn2extra-docker-debuginfo:
+    descr: Amazon Extras debuginfo repo for docker
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/docker/latest/debuginfo/$basearch/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
+  amzn2extra-docker-source:
+    descr: Amazon Extras source repo for docker
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/docker/latest/SRPMS/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
+  amzn2extra-kernel-5.10:
+    descr: Amazon Extras repo for kernel-5.10
+    enabled: true
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/kernel-5.10/latest/$basearch/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
+  amzn2extra-kernel-5.10-debuginfo:
+    descr: Amazon Extras debuginfo repo for kernel-5.10
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/kernel-5.10/latest/debuginfo/$basearch/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
+  amzn2extra-kernel-5.10-source:
+    descr: Amazon Extras source repo for kernel-5.10
+    enabled: false
+    gpgcheck: true
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-linux-2
+    mirrorlist: "$awsproto://$amazonlinux.$awsregion.$awsdomain/$releasever/extras/kernel-5.10/latest/SRPMS/mirror.list"
+    priority: '10'
+    skip_if_unavailable: true
+    target: /etc/yum.repos.d/amzn2-extras.repo
